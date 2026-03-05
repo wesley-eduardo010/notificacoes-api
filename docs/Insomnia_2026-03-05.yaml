@@ -1,0 +1,166 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Notificações API
+meta:
+  id: wrk_de3a9771c73e4819bb34f4a76244933f
+  created: 1772714905312
+  modified: 1772714905312
+  description: ""
+collection:
+  - name: Eventos
+    meta:
+      id: fld_e09d0f65eff040eaa6d9b7b7b3d94268
+      created: 1772730451628
+      modified: 1772730522300
+      sortKey: -1772730453028
+      description: ""
+    children:
+      - url: http://localhost:3000/eventos
+        name: Listar todos os eventos
+        meta:
+          id: req_ade2c8f3fee84fdda329b14873857dd3
+          created: 1772714961764
+          modified: 1772730543959
+          isPrivate: false
+          description: ""
+          sortKey: -1772730525068
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/eventos/1
+        name: Buscar evento por ID
+        meta:
+          id: req_57120b6bcce644a49c1e02eb3ac1f2ad
+          created: 1772715041927
+          modified: 1772730533326
+          isPrivate: false
+          description: ""
+          sortKey: -1772730524768
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/eventos
+        name: Criar um evento
+        meta:
+          id: req_3f59d37068f64bb283d400d28d98cc7a
+          created: 1772715078733
+          modified: 1772730524680
+          isPrivate: false
+          description: ""
+          sortKey: -1772730524668
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "nome": "Palestra sobre APIs REST",
+            "descricao": "Como construir APIs profissionais",
+            "data": "2025-10-10",
+            "local": "SENAI - Sala 5",
+            "capacidade": 50
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/eventos/3
+        name: Atualizar um evento
+        meta:
+          id: req_a615438aeeec46f28a36c33a89258ae1
+          created: 1772715141178
+          modified: 1772730541980
+          isPrivate: false
+          description: ""
+          sortKey: -1772730524968
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "nome": "Palestra sobre APIs REST (Atualizada)",
+            "capacidade": 80
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/eventos
+        name: Deletar um evento
+        meta:
+          id: req_d5cd2053300e43379eb7c32321d391fd
+          created: 1772715198411
+          modified: 1772730538929
+          isPrivate: false
+          description: ""
+          sortKey: -1772730524868
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_bdb527898b7553f8f61be2b77711c70af7c1fa7c
+    created: 1772714905318
+    modified: 1772714905318
+environments:
+  name: Base Environment
+  meta:
+    id: env_bdb527898b7553f8f61be2b77711c70af7c1fa7c
+    created: 1772714905316
+    modified: 1772714905316
+    isPrivate: false
