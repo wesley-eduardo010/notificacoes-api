@@ -65,4 +65,16 @@ function update(req, res) {
     res.json(eventoAtualizado);
 }
 
-module.exports = { index, show, store, update };
+function destroy(req, res) { // ou o nome que você escolheu
+  // ... lógica de deletar
+}
+
+module.exports = { 
+  index, 
+  show, 
+  store, 
+  update, 
+  destroy // <--- ELA PRECISA ESTAR AQUI!
+};
+
+module.exports = { index, show, store, update, destroy };

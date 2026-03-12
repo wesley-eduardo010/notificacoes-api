@@ -8,3 +8,5 @@ router.post("/", EventoController.store); // POST /eventos
 router.put("/:id", EventoController.update); // PUT /eventos/:id
 router.delete("/:id", EventoController.destroy); // DELETE /eventos/:id
 module.exports = router;
+// ... importações ...
+router.delete("/:id", EventoController.destroy); // Linha 9 (provável causa)
