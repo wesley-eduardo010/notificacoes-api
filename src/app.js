@@ -1,23 +1,24 @@
+// src/app.js
 const express = require("express");
+const swaggerUi = require("swagger-ui-express");
+const swaggerSpec = require("./swagger");   
 const app = express();
-
-// Middleware para ler JSON no body
+// Middlewares
 app.use(express.json());
-
-// Importar rotas
+// Documentação Swagger
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+// Rotas
 const eventoRoutes = require("./routes/eventoRoutes");
 const participanteRoutes = require("./routes/participanteRoutes");
-const inscricaoRoutes = require("./routes/inscricaoRoutes"); // Adicione esta linha também
-
-// Usar rotas com prefixo
+const inscricaoRoutes = require("./routes/inscricaoRoutes");
 app.use("/eventos", eventoRoutes);
 app.use("/participantes", participanteRoutes);
-app.use("/inscricoes", inscricaoRoutes); // Adicione esta linha também
-
-// Rota raiz (informativa)
+app.use("/inscricoes", inscricaoRoutes);
+// Rota raiz
 app.get("/", (req, res) => {
     res.json({
         mensagem: "API de Notificações",
+        documentacao: "/api-docs",
         rotas: {
             eventos: "/eventos",
             participantes: "/participantes",
@@ -26,5 +27,4 @@ app.get("/", (req, res) => {
     });
 });
 
-// O module.exports TEM QUE SER A ÚLTIMA LINHA
 module.exports = app;
